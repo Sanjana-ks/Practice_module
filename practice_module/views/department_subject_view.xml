@@ -9,6 +9,7 @@
             <tree>
                 <field name="name"/>
                 <field name="head"/>
+                <field name="fees"/>
                 <field name="subjects"/>
                 <field name="student_id"/>
             </tree>
@@ -22,14 +23,38 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group colspan="4" col="4">
+                    <group>
                         <field name="name"/>
                         <field name="head"/>
-                        <field name="subjects"/>
+                        <field name="fees"/>
                     </group>
-                    <group>
-                        <field name="student_id"/>
-                    </group>
+                    <notebook>
+                        <page string="Students">
+                            <field name="student_id">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="dob"/>
+                                    <field name="gender"/>
+                                    <field name="mobile"/>
+                                    <field name="department_id"/>
+                                    <field name="is_graduated"/>
+                                    <field name="admission"/>
+                                    <field name="fees"/>
+                                    <field name="remaining_fees"/>
+                                    <field name="student_marks_line"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Subject Details">
+                            <field name="subjects">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="department_id"/>
+                                    <field name="head"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -51,6 +76,7 @@
             <tree>
                 <field name="name"/>
                 <field name="department_id"/>
+                <field name="head"/>
             </tree>
         </field>
     </record>
@@ -61,11 +87,13 @@
         <field name="model">subject</field>
         <field name="arch" type="xml">
             <form>
-<!--                <sheet>-->
+                <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="department_id"/>
+                        <field name="head"/>
                     </group>
-<!--                </sheet>-->
+                </sheet>
             </form>
         </field>
     </record>
@@ -76,6 +104,22 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">subject</field>
         <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Subject Search View -->
+    <record id="subject_search_view" model="ir.ui.view">
+        <field name="name">subject.search.view</field>
+        <field name="model">subject</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name"/>
+                <field name="department_id"/>
+                <field name="head"/>
+                <group expand="0" string="Group By">
+                    <filter string="Department" name="department_name" domain="[]" context="{'group_by':'department_id'}"/>
+                </group>
+            </search>
+        </field>
     </record>
 
 </odoo>

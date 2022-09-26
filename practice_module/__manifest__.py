@@ -10,9 +10,8 @@
     'depends': ["base"],
     'data': [
         "security/ir.model.access.csv",
-        "views/student_view.xml",
-        "views/marks_view.xml",
         "views/department_subject_view.xml",
+        "views/student_view.xml",
         "views/menu_view.xml"
     ],
     'demo': [],

@@ -19,6 +19,9 @@ class Marks(models.Model):
             val.total = total
 
     student_id = fields.Many2one('student', string='Student Name')
+    class_name = fields.Selection([
+        ('class_x', '10th'),
+        ('class_xii', '12th')], string='Class')
     physics_marks = fields.Float(string='Physics Marks')
     chemistry_marks = fields.Float(string='Chemistry Marks')
     maths_marks = fields.Float(string='Maths Marks')
