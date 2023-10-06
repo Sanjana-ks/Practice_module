@@ -25,3 +25,4 @@ jobs:
         git remote set-url origin https://x-access-token:${{ secrets.MY_TOKEN }}@github.com/${{ github.repository }}
         git commit -am "Auto updated submodule" 
         git push || echo "No changes to commit"
+        acvb
