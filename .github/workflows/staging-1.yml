@@ -1,11 +1,14 @@
 name: 'Submodules Staging-1 Update'
 
-on: [repository_dispatch]
+on:
+  push:
+    branches:
+      - main
   # Allows you to run this workflow manually from the Actions tab or through HTTP API
-  
+  workflow_dispatch:
 
 jobs:
-  update:
+  sync:
     runs-on: ubuntu-latest
     
     steps:
