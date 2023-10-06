@@ -1,7 +1,7 @@
 name: 'Submodules Staging-1'
 
 on:
-  workflow_dispatch:
+  workflow_run:
 
 jobs:
   sync:
