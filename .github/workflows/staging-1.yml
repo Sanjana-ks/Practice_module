@@ -1,10 +1,10 @@
 name: 'Submodules Staging-1'
 
 on:
-  workflow_run:
+  workflow_dispatch:
 
 jobs:
-  sync:
+  update:
     runs-on: ubuntu-latest
     
     steps:
