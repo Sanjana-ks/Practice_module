@@ -2,7 +2,9 @@ name: 'Submodules Staging-1 Update'
 
 on:
   # Allows you to run this workflow manually from the Actions tab or through HTTP API
-  workflow_dispatch:
+  push:
+    branches:
+      - staging-1
 
 jobs:
   update:
@@ -25,4 +27,3 @@ jobs:
         git remote set-url origin https://x-access-token:${{ secrets.MY_TOKEN }}@github.com/${{ github.repository }}
         git commit -am "Auto updated submodule" 
         git push || echo "No changes to commit"
-        acvb
