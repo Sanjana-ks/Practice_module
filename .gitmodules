@@ -1,0 +1,11 @@
+[submodule "odoo_custom_projects"]
+	path = odoo_custom_projects
+	url = https://github.com/Sanjana-ks/odoo_custom_projects.git
+[submodule "sub_module"]
+	path = sub_module
+	url = https://github.com/Sanjana-ks/odoo_custom_projects.git
+	branch = staging-1
+[submodule "submodules"]
+	path = submodules
+	url = https://github.com/Sanjana-ks/odoo_custom_projects.git
+	branch = staging-2
