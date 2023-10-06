@@ -2,9 +2,7 @@ name: 'Submodules Staging-1 Update'
 
 on:
   # Allows you to run this workflow manually from the Actions tab or through HTTP API
-  push:
-    branches:
-      - staging-1
+  workflow_dispatch:
 
 jobs:
   update:
@@ -13,7 +11,7 @@ jobs:
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
-      uses: actions/checkout@staging-1
+      uses: actions/checkout@v3
 
     # Update references
     - name: Git Sumbodule Update
